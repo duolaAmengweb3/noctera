@@ -9,7 +9,9 @@ struct PaywallView: View {
     private let perks: [(String, String, String)] = [
         ("text.book.closed.fill", "Full dream readings", "The complete reflection behind every omen, not just the headline"),
         ("sparkles", "Personalized on-device AI", "A reading shaped to your dream — private, never sent anywhere"),
+        ("wand.and.stars", "Dream art", "Turn a dream into an illustration, generated privately on your device"),
         ("chart.line.uptrend.xyaxis", "Pattern insights", "Track recurring symbols, themes & moods over time"),
+        ("sparkles.rectangle.stack.fill", "Dream Wrapped", "Your month & year in dreams — a private mythology chapter"),
         ("square.and.arrow.up.fill", "Shareable cards", "Turn any reading into a card made to post"),
         ("moon.zzz.fill", "Lucid reality-checks", "Habit-building reminders to wake up inside your dreams"),
         ("arrow.down.doc.fill", "Export everything", "CSV, JSON or a dream book — your data, always yours")
