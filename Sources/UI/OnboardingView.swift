@@ -14,7 +14,7 @@ struct OnboardingView: View {
                 VStack(alignment: .leading, spacing: 14) {
                     row("mic.fill", "Capture in seconds", "Speak the moment you wake — it saves itself")
                     row("sparkles", "Read the symbols", "A consistent, archetypal reading — on-device, private")
-                    row("chart.line.uptrend.xyaxis", "See what recurs", "Track the symbols your nights keep returning to")
+                    row("arrow.triangle.2.circlepath", "It remembers you", "Connects tonight's dream to the symbols your nights keep repeating")
                 }.padding(20).background(RoundedRectangle(cornerRadius: 22).fill(Theme.card))
                     .overlay(RoundedRectangle(cornerRadius: 22).strokeBorder(Theme.border, lineWidth: 0.7))
                 Spacer()

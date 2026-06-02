@@ -33,7 +33,7 @@ struct DreamDetailView: View {
                         }
                     }
                     interpretationSection
-                    if pro { dreamArtSection }
+                    dreamArtSection
                     if let memory { patternSection(memory) }
                 }
                 .padding(.horizontal, 20).padding(.top, 14).padding(.bottom, 40)
@@ -123,7 +123,14 @@ struct DreamDetailView: View {
 
     private var dreamArtSection: some View {
         VStack(alignment: .leading, spacing: 11) {
-            SectionLabel(text: "Dream art")
+            HStack {
+                SectionLabel(text: "Dream art")
+                Spacer()
+                if !pro {
+                    Text("PRO").font(.system(size: 9, weight: .heavy)).foregroundStyle(Theme.bg1)
+                        .padding(.horizontal, 5).padding(.vertical, 1).background(Theme.aurora, in: Capsule())
+                }
+            }
             ZStack {
                 if let art {
                     Image(uiImage: art).resizable().aspectRatio(contentMode: .fill)
@@ -134,17 +141,24 @@ struct DreamDetailView: View {
                             if artLoading { ProgressView().tint(.white) }
                             else {
                                 VStack(spacing: 8) {
-                                    Image(systemName: "wand.and.stars").font(.title).foregroundStyle(.white)
-                                    Text(DreamArt.isSupported ? "Paint this dream" : "Dream art needs an Apple-Intelligence device")
+                                    Image(systemName: pro ? "wand.and.stars" : "lock.fill").font(.title).foregroundStyle(.white)
+                                    Text(artPrompt)
                                         .font(.system(size: 13, weight: .medium)).foregroundStyle(.white).multilineTextAlignment(.center).padding(.horizontal)
                                 }
                             }
                         }
-                        .onTapGesture { if DreamArt.isSupported && !artLoading { makeArt() } }
+                        .onTapGesture {
+                            if !pro { showPaywall = true }
+                            else if DreamArt.isSupported && !artLoading { makeArt() }
+                        }
                 }
             }
             .overlay(RoundedRectangle(cornerRadius: 20).strokeBorder(Theme.border, lineWidth: 0.8))
         }
+    }
+    private var artPrompt: String {
+        if !pro { return "Turn this dream into art\nGenerated privately on your device" }
+        return DreamArt.isSupported ? "Paint this dream" : "Dream art needs an Apple-Intelligence device"
     }
     private func makeArt() {
         artLoading = true

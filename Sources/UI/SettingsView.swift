@@ -67,6 +67,14 @@ struct SettingsView: View {
                         Text("Tell Noctera your recurring people, places and symbols — your on-device AI weaves them into readings. Never leaves your phone.").font(.caption).foregroundStyle(Theme.textLow)
                     }.listRowBackground(Theme.card)
 
+                    Section {
+                        Label("Add the Noctera widget", systemImage: "rectangle.stack")
+                        Label("Bind \u{201C}Log a Dream\u{201D} to the Action Button", systemImage: "button.programmable")
+                        Label("\u{201C}Hey Siri, log a dream in Noctera\u{201D}", systemImage: "mic.circle")
+                    } header: { Text("Quick capture") } footer: {
+                        Text("Capture a dream without opening the app — add the widget from your Home Screen, assign the Action Button in iOS Settings, or just ask Siri.").font(.caption).foregroundStyle(Theme.textLow)
+                    }.listRowBackground(Theme.card)
+
                     Section("About") {
                         Link(destination: URL(string: "https://duolaamengweb3.github.io/noctera/privacy.html")!) { Label("Privacy Policy", systemImage: "hand.raised") }
                         Link(destination: URL(string: "https://duolaamengweb3.github.io/noctera/support.html")!) { Label("Support", systemImage: "questionmark.circle") }
