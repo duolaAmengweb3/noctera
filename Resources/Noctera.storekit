@@ -1,0 +1,24 @@
+{
+  "identifier" : "NOCTERA_SK",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "NOCT0001",
+      "localizations" : [
+        {
+          "description" : "Unlock AI dream readings, pattern insights, shareable cards, and export.",
+          "displayName" : "Noctera Pro",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.duolaameng.noctera.pro",
+      "referenceName" : "Noctera Pro",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : { "_compatibilityTimeRate" : { "rate" : 1 } },
+  "subscriptionGroups" : [],
+  "version" : { "major" : 4, "minor" : 0 }
+}
