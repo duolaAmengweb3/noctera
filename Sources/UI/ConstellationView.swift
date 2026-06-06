@@ -33,6 +33,6 @@ struct ConstellationView: View {
     private func pos(_ i: Int, c: CGPoint, r: CGFloat) -> CGPoint {
         let n = max(top.count - 1, 1)
         let a = (Double(i - 1) / Double(n)) * 2 * .pi - .pi/2
-        return CGPoint(x: c.x + r * cos(a), y: c.y + r * sin(a))
+        return CGPoint(x: c.x + r * CGFloat(cos(a)), y: c.y + r * CGFloat(sin(a)))
     }
 }
